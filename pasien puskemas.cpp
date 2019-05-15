@@ -1,0 +1,241 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+#include <iomanip>
+
+
+using namespace std;
+
+void datapasien();
+void datapoli();
+
+void menuutama();
+void transaksi();
+
+struct kamar{
+	char namaruangpasien[20];
+	char kapasitasruang[20;
+} datakelas[40];
+
+struct pasien{
+	char nama_pasien[30];
+	char nomor_pasien[12];
+} datapsn[30];
+
+ void transaksi(){
+    int pilih,X,Z;
+    int tggl;
+
+    do {system("cls");
+        cout<<"Menu transaksi"<<endl;
+        cout<<"1. transaksi"<<endl;
+        cout<<"2. transaksi"<<endl;
+        cout<<"3. transaksi"<<endl;
+        cout<<"0. Selesai"<<endl;
+        cout<<"Silahkan pilih menu transaksi";cin>>pilih;
+        cout<<endl;
+    switch(pilih){
+    case 1:
+        cout<<"Masukkan tanggal transaksi (dd-mm-yy)    :";cin>>tggl;
+    break;
+    case 2:
+        {
+            (datakelas[40]);
+        }
+        cout<<"pilih data pasien :";cin>>X;
+        cout<<endl;
+    break;
+    case 3:
+        {
+            datapasien[30];
+        }
+        cout<<"pilih data poli  :";cin>>Z;
+        cout<<endl;
+    break;
+    case 0:
+        cout<<"terimakasih"<<endl;
+    break;
+    default:cout<<"Masukan menu"<<endl;}
+        system("pause");}
+    while(pilih!=0);
+
+}
+
+void header (){
+	cout<<endl;
+	cout<<"  Sistem Informasi Pendaftaran Pasien";
+	cout<<"\n=============================================\n";
+}
+
+void datapasien (){
+	int pilihan;
+	int masukan;
+	int ganti;
+	menudata:
+	cout<<"\n     D A T A   P A S I E N ";
+	cout<<"\n---------------------------------------------";
+	cout<<"\n1. Tambah Data Pasien";
+	cout<<"\n2. Lihat Data Pasien";
+	cout<<"\n3. Ubah Data Pasien";
+	cout<<"\n4. Hapus Data Pasien";
+	cout<<"\n---------------------------------------------";
+	cout<<"\n   Inputkan nomor menu pilihan Anda: "; cin>>pilihan;
+	switch(pilihan){
+	case 1:
+		system ("cls");
+		header();
+		cout<<"\n| Banyak Data Pasien Yang Ingin Anda Input : "; cin>>masukan;
+		cout<<"+------------------------------------------------+"<<endl;
+		for(int i=0; i<masukan; i++){
+			cout<<"| ->> Data Pasien Ke-"<<i+1<<" : \n";
+			cout<<"+------------------------------------------------+\n"<<endl;
+			cout<<"Masukkan Nama Pasien : "; fflush(stdin) ;gets(datakelas[i].namaruangpasien);
+			cout<<"Masukkan Nama Ruang Pasien : ";fflush(stdin) ;gets(datakelas[i].kapasitasruang);
+			cout<<"+------------------------------------------------+"<<endl;
+		};
+		system("pause");
+		system("cls");
+		goto menudata;
+	case 2:
+		system ("cls");
+		header();
+		for(int i=0; i<masukan; i++){
+			cout<<"| ->> Data Kelas Ke-"<<i+1<<" : \n";
+			cout<<"+------------------------------------------------+\n"<<endl;
+			cout<<"Nama Pasien : "<<datakelas[i].namaruangpasien<<endl;
+			cout<<"Nama Ruangan : "<<datakelas[i].kapasitasruang<<endl;
+			cout<<"+------------------------------------------------+"<<endl;
+		};
+		system("pause");
+		system("cls");
+		goto menudata;
+	case 3:
+		system ("cls");
+		header();
+		cout<<"Data Pasien Keberapa yang Ingin Diubah : "; cin>>ganti;
+		cout<<"\nMengubah Data Pasien ke-"<<ganti<<endl;
+		cout<<"Nama Pasien baru : "; fflush(stdin) ;gets(datakelas[ganti-1].namaruangpasien);
+		cout<<"Nama Ruang baru : "; fflush(stdin) ;gets(datakelas[ganti-1].kapasitasruang);
+		cout<<"\nData berhasil diubah...\n";
+		system("pause");
+		system("cls");
+		goto menudata;
+	case 4:
+		system ("cls");
+		header();
+	};
+}
+
+void datapoli (){
+	int pilihan;
+	int masukan;
+	int ganti;
+	int hapus;
+	menupasien:
+	cout<<"\n    D A T A    P O L I ";
+	cout<<"\n---------------------------------------------";
+	cout<<"\n1. Tambah Data Poli";
+	cout<<"\n2. Lihat Data Poli";
+	cout<<"\n3. Ubah Data Poli";
+	cout<<"\n4. Clear Data Poli";
+	cout<<"\n---------------------------------------------";
+	cout<<"\n   Inputkan nomor menu pilihan Anda: "; cin>>pilihan;
+	switch(pilihan){
+	case 1:
+		system ("cls");
+		header();
+		cout<<"\n| Banyak Data Poli Yang Ingin Anda Input : "; cin>>masukan;
+		cout<<"+------------------------------------------------+"<<endl;
+		for(int i=0; i<masukan; i++){
+			cout<<"| ->> Data Pengajar Ke-"<<i+1<<" : \n";
+			cout<<"+------------------------------------------------+\n"<<endl;
+			cout<<"Masukkan Nama Poli : "; fflush(stdin) ;gets(datapsn[i].nama_pasien);
+			cout<<"Masukkan Nomor Poli : ";fflush(stdin) ;gets(datapsn[i].nomor_pasien);
+			cout<<"+------------------------------------------------+"<<endl;
+		};
+		system("pause");
+		system("cls");
+		goto menupasien;
+	case 2:
+		system ("cls");
+		header();
+		for(int i=0; i<masukan; i++){
+			cout<<"| ->> Data Pengajar Ke-"<<i+1<<" : \n";
+			cout<<"+------------------------------------------------+\n"<<endl;
+			cout<<"Nama : "<<datapsn[i].nama_pasien<<endl;
+			cout<<"Nomor : "<<datapsn[i].nomor_pasien<<endl;
+			cout<<"+------------------------------------------------+"<<endl;
+		};
+		system("pause");
+		system("cls");
+		goto menupasien;
+	case 3:
+		system ("cls");
+		header();
+		cout<<"Data Poli Keberapa yang Ingin Diubah : "; cin>>ganti;
+		cout<<"\nMengubah Data Poli ke-"<<ganti<<endl;
+		cout<<"Nama baru : "; fflush(stdin) ;gets(datapsn[ganti-1].nama_pasien);
+		cout<<"Nomor baru : "; fflush(stdin) ;gets(datapsn[ganti-1].nomor_pasien);
+		cout<<"\nData berhasil diubah...\n";
+		system("pause");
+		system("cls");
+		goto menupasien;
+	case 4:
+		system ("cls");
+		header();
+		cout<<"Data Poli Keberapa yang Ingin Dihapus : "; cin>>hapus;
+	};
+}
+
+
+void keluar (){
+	cout<<"\n       S E L A M A T    T I N G G A L";
+	cout<<"\n---------------------------------------------";
+	cout<<endl;
+}
+
+void menuutama (){
+	menu:
+	header ();
+	int pilihan;
+	cout<<"\n1. Data Pasien";
+	cout<<"\n2. DAta Poli";
+	cout<<"\n3. Data Transaksi";
+	cout<<"\n0. Keluar Sistem";
+	cout<<"\n=============================================";
+	cout<<"\n   Inputkan nomor menu pilihan Anda: "; cin>>pilihan;
+		switch(pilihan){
+			case 1:
+				system ("cls");
+				header();
+				datapasien();
+				system("pause");
+				goto menu;
+			case 2:
+				system ("cls");
+				header();
+				datapoli();
+				cout<<"\n   Inputkan nomor menu pilihan Anda: "; cin>>pilihan;
+				system ("pause");
+				system("cls");
+				goto menu;
+			case 3:
+				system("cls");
+				header();
+				transaksi();
+				system("pause");
+				system("cls");
+				goto menu;
+			case 4:
+				cout<<"\n Keluar ";
+				system("cls");
+				header();
+				goto menu;
+	}
+}
+
+int main (){
+	
+	menuutama ();
+	return 0;
+}
